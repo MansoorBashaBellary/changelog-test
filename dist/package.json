@@ -2,18 +2,20 @@
   "name": "changelog-test",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.js",
+  "main": "index.js",
   "scripts": {
-    "copy:utilities": "mkdir ./dist; cp -R package.json ./dist/; cp -R ./src/ ./dist/src",
     "changelog": "yarn conventional-changelog -p angular -i CHANGELOG.md -s",
-    "version": "yarn copy:utilities && yarn changelog && git add CHANGELOG.md",
+    "version": "yarn changelog && git add CHANGELOG.md",
     "postversion": "git push && git push --tags"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MansoorBashaBellary/changelog-test.git"
   },
-  "author": "",
+  "author": "mansoorbashabellary<mansoor.basha445@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MansoorBashaBellary/changelog-test/issues"
