@@ -4,9 +4,8 @@
   "description": "",
   "main": "./src/index.js",
   "scripts": {
-    "copy:utilities": "mkdir ./dist; cp -R package.json ./dist/; cp -R ./src/ ./dist/src",
     "changelog": "yarn conventional-changelog -p angular -i CHANGELOG.md -s",
-    "version": "yarn copy:utilities && yarn changelog && git add CHANGELOG.md",
+    "precommit": "yarn changelog && git add CHANGELOG.md",
     "postversion": "git push && git push --tags"
   },
   "repository": {
